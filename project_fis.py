@@ -9,7 +9,7 @@ brown = vector(0.6,0.3,0.1)
 marrom_claro = vector(0.8,0.7,0.6)
 d_gray = vector(0.3,0.3,0.3)
 
-# Criação da cena
+# Criação
 scene = canvas(title='Máquina Modificada de Atwood',
                width=800, height=600,
                center=vector(0, 2, 0),
@@ -50,13 +50,13 @@ v2 = vector(0, 0, 0)
 # Loop de simulação
 dt = 0.001  # Intervalo de tempo
 while True:
-    rate(200)  # Taxa de atualização da cena
+    rate(200)  # Taxa de atualização
 
     # Atualização das forças nas massas
-    f1 = m1 * g * vector(0, -1, 0)  # Força peso na massa1
-    f2 = m2 * g * vector(0, -1, 0)  # Força peso na massa2
+    f1 = m1 * g * vector(0, -1, 0)  # peso na massa1
+    f2 = m2 * g * vector(0, -1, 0)  # peso na massa2
 
-    # Aceleração das massas (considerando o sistema ideal, corda inextensível)
+    # Aceleração das massas (considerando o sistema ideal)
     a = (f2 - f1) / (m1 + m2)  # Aceleração comum às duas massas
 
     # Atualização das velocidades
@@ -70,7 +70,7 @@ while True:
     # Verifica os limites de movimento
     if nova_pos1.y < 2.5 or nova_pos2.y < 2.5:
         break
-      
+
     # Atualiza as posições das massas
     massa1.pos = nova_pos1
     massa2.pos = nova_pos2
